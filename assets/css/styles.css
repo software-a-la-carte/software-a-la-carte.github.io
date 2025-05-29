@@ -21,13 +21,28 @@ body {
   position: fixed; 
   top: 0; left: 0; right: 0;
   z-index: 999;
-  /* display: flex; align-items: center; gap: 2rem; */
-  /* padding: .75rem 1.5rem; */
-  /* background: #ffffffcc; backdrop-filter: blur(6px); */
-  /* border-bottom: 1px solid #ddd; */
+  display: flex; 
+  align-items: center; 
+  gap: 2rem;
+  padding: .75rem 1.5rem;
+  background: #ffffffcc; 
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #ddd;
 }
-.topbar nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; }
-.topbar a { text-decoration: none; color: inherit; font-weight: 600; }
+.topbar nav { margin-left: auto; }
+
+.topbar nav ul { 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    gap: 1rem; }
+
+.topbar a { 
+    text-decoration: none; 
+    color: inherit; 
+    font-weight: 600; }
+
 .topbar a:hover { color: #007acc; }
 
 /* 3. Hero section */
@@ -44,12 +59,44 @@ body {
   content: "scroll";
   position: absolute;
   left: 50%;
-  bottom: 2rem;
+  bottom: 1.5rem;
   transform: translateX(-50%);
   font-size: .75rem;
   letter-spacing: .2em;
   animation: pulse 2s infinite;
 }
+@keyframes pulse { 0%,100% {opacity:.3} 50% {opacity:1} }
+
+.scroll-arrow {
+  --size: 28px;             /* easy-to-tweak custom prop */
+  position: absolute;
+  bottom: calc(1.5rem + var(--size)); /* sits above the “scroll” text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--size);
+  height: var(--size);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  /* build the arrow with two borders rotated 45° */
+  border-right: 3px solid #555;
+  border-bottom: 3px solid #555;
+  transform: translateX(-50%) rotate(45deg);
+  transition: transform .3s ease, border-color .3s ease;
+}
+
+/* subtle hover / focus animation */
+.scroll-arrow:hover,
+.scroll-arrow:focus-visible {
+  transform: translateX(-50%) translateY(4px) rotate(45deg) scale(1.15);
+  border-color: #007acc;    /* accent colour on hover */
+}
+
+/* (optional) keyboard focus outline */
+.scroll-arrow:focus-visible { outline: 2px dashed #007acc; outline-offset: 4px; }
+
+@keyframes pulse { 0%,100% {opacity:.3} 50% {opacity:1} }
+
 .cube {
   --size: 120px;
   width: var(--size); height: var(--size);
