@@ -1,1 +1,69 @@
-Hello, World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Company</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <a href="#hero" class="logo">
+      <img src="assets/img/logo.png" alt="Company logo" />
+    </a>
+
+    <!-- Clickable section labels -->
+    <nav>
+      <ul>
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#services">What&nbsp;We&nbsp;Do</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 1️⃣ “Design in the middle” / hero -->
+  <section id="hero" class="hero" tabindex="0"
+           aria-label="Interactive rotating cube; press Space to pause/resume">
+    <div class="cube"></div>
+  </section>
+
+  <!-- 2️⃣ Mission statement -->
+  <section id="mission" class="section">
+    <h2>Mission Statement</h2>
+    <p>
+      We use leading-edge engineering to turn complex business challenges
+      into elegant, human-centred digital products.
+    </p>
+  </section>
+
+  <!-- 3️⃣ What we do -->
+  <section id="services" class="section">
+    <h2>What We Do</h2>
+    <ul class="cards">
+      <li><h3>Consulting</h3><p>Architecture, audits &amp; road-mapping.</p></li>
+      <li><h3>Implementation</h3><p>Full-stack &amp; cloud-native builds.</p></li>
+      <li><h3>Training</h3><p>Workshops and on-site up-skilling.</p></li>
+    </ul>
+  </section>
+
+  <!-- 4️⃣ Contact -->
+  <section id="contact" class="section contact">
+    <h2>Contact Us</h2>
+    <address>
+      <p>📧 <a href="mailto:hello@example.com">hello@example.com</a></p>
+      <p>📞 +1 234 567 8901</p>
+      <p>🏢 123 Queen St W, Toronto, ON</p>
+    </address>
+  </section>
+
+  <footer>&copy; 2025 My Company</footer>
+
+  <!-- JS -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
+

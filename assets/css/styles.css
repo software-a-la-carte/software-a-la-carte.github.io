@@ -1,0 +1,58 @@
+/* 1. Base settings */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: #222;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+.section { padding: 4rem 1.5rem; max-width: 960px; margin: 0 auto; }
+
+/* 2. Top bar */
+.topbar {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; gap: 2rem;
+  padding: .75rem 1.5rem;
+  background: #ffffffcc; backdrop-filter: blur(6px);
+  border-bottom: 1px solid #ddd;
+}
+.topbar nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; }
+.topbar a { text-decoration: none; color: inherit; font-weight: 600; }
+.topbar a:hover { color: #007acc; }
+
+/* 3. Hero section */
+.hero { min-height: 70vh; display: grid; place-items: center; background: #f7f9fb; }
+.cube {
+  --size: 120px;
+  width: var(--size); height: var(--size);
+  transform-style: preserve-3d;
+  animation: spin 8s infinite linear;
+}
+.cube::before,
+.cube::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 30%, #007acc 0%, #004a8f 100%);
+  transform: translateZ(calc(var(--size) / 2));
+}
+/* quick pseudo-cube effect */
+@keyframes spin { to { transform: rotateX(360deg) rotateY(360deg); } }
+
+/* Pause/resume on Space key (handled in JS) */
+.cube.paused { animation-play-state: paused; }
+
+/* 4. Card list in Services */
+.cards { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: 1.2rem; }
+@media (min-width: 700px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+.cards li {
+  padding: 1.2rem; border-radius: 12px; background: #fff; box-shadow: 0 4px 10px #0001;
+}
+.cards h3 { margin: 0 0 .5rem; }
+
+/* 5. Contact */
+.contact address { font-style: normal; line-height: 1.6; }
+
+/* 6. Footer */
+footer { text-align: center; padding: 2rem 1rem; font-size: .875rem; color: #666; }
